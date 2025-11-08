@@ -1,0 +1,19 @@
+# Netlify configuration for React SPA with client-side routing
+# This ensures all routes are handled by React Router
+
+[build]
+  # Build command to run
+  command = "npm run build"
+  
+  # Directory containing the production build output
+  publish = "frontend/build"
+  
+  # Base directory for the build
+  base = "frontend"
+
+# SPA redirect rule: serve index.html for all routes with 200 status
+# This allows React Router to handle client-side routing properly
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
