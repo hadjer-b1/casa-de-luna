@@ -13,7 +13,7 @@ function Footer() {
   const [email, setEmail] = useState("");
   const toast = useToast();
 
-  // Function to send notification to user 
+  // Function to send notification to user
   const sendNotificationToUser = async (message, notifType = "info") => {
     try {
       const stored = JSON.parse(localStorage.getItem("user") || "{}");
@@ -55,37 +55,45 @@ function Footer() {
     }
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/subscribe`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-      
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/api/subscribe`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
+
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
         throw new Error(errorData.message || "Subscription failed");
       }
-      
+
       const data = await response.json();
-      
-       toast.addToast("Successfully subscribed to our newsletter!", { type: "success" });
-      
-       await sendNotificationToUser(
+
+      toast.addToast("Successfully subscribed to our newsletter!", {
+        type: "success",
+      });
+
+      await sendNotificationToUser(
         "You've successfully subscribed to Casa De Luna newsletter!",
         "success"
       );
-      
-       setEmail("");
-      
+
+      setEmail("");
+
       console.log("Success:", data);
     } catch (error) {
       console.error("Error:", error);
-      toast.addToast(error.message || "Failed to subscribe. Please try again.", { type: "error" });
+      toast.addToast(
+        error.message || "Failed to subscribe. Please try again.",
+        { type: "error" }
+      );
     }
   };
-  
+
   // making the clicking on the links scroll to top
   const scrollToTop = () => {
     window.scrollTo(0, 0);
@@ -167,7 +175,11 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/reservation" onClick={scrollToTop} className="nav-link">
+              <Link
+                to="/reservation"
+                onClick={scrollToTop}
+                className="nav-link"
+              >
                 Reservations
               </Link>
             </li>
@@ -182,22 +194,38 @@ function Footer() {
           <h2>Our Services</h2>
           <ul>
             <li>
-              <Link to="/services/catering" onClick={scrollToTop} className="service-link  ">
+              <Link
+                to="/services/catering"
+                onClick={scrollToTop}
+                className="service-link  "
+              >
                 Catering
               </Link>
             </li>
             <li>
-              <Link to="/services/delivery" onClick={scrollToTop} className="service-link nav-link">
+              <Link
+                to="/services/delivery"
+                onClick={scrollToTop}
+                className="service-link nav-link"
+              >
                 Delivery
               </Link>
             </li>
             <li>
-              <Link to="/services/events" onClick={scrollToTop} className="service-link nav-link">
+              <Link
+                to="/services/events"
+                onClick={scrollToTop}
+                className="service-link nav-link"
+              >
                 Events
               </Link>
             </li>
             <li>
-              <Link to="/services/specials" onClick={scrollToTop} className="service-link nav-link">
+              <Link
+                to="/services/specials"
+                onClick={scrollToTop}
+                className="service-link nav-link"
+              >
                 Specials
               </Link>
             </li>
@@ -206,16 +234,32 @@ function Footer() {
         <div className="Help-center footer-nav-section">
           <h2>Help Center</h2>
           <div className="help-links">
-            <Link to="/helps/faq" onClick={scrollToTop} className="help-link nav-link">
+            <Link
+              to="/helps/faq"
+              onClick={scrollToTop}
+              className="help-link nav-link"
+            >
               FAQ
             </Link>
-            <Link to="/helps/support" onClick={scrollToTop} className="help-link nav-link">
+            <Link
+              to="/helps/support"
+              onClick={scrollToTop}
+              className="help-link nav-link"
+            >
               Support
             </Link>
-            <Link to="/helps/testimonials" onClick={scrollToTop} className="help-link nav-link">
+            <Link
+              to="/helps/testimonials"
+              onClick={scrollToTop}
+              className="help-link nav-link"
+            >
               Testimonials
             </Link>
-            <Link to="/helps/restaurants" onClick={scrollToTop} className="help-link nav-link">
+            <Link
+              to="/helps/restaurants"
+              onClick={scrollToTop}
+              className="help-link nav-link"
+            >
               Restaurant Shop
             </Link>
           </div>

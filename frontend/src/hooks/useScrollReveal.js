@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 
 export default function useScrollReveal(selector = ".reveal", options = {}) {
+  const serializedOptions = JSON.stringify(options || {});
+
   useEffect(() => {
     const els = Array.from(document.querySelectorAll(selector));
     if (!els.length) return;
@@ -23,5 +25,5 @@ export default function useScrollReveal(selector = ".reveal", options = {}) {
 
     els.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, [selector, JSON.stringify(options)]);
+  }, [selector, serializedOptions, options]);
 }

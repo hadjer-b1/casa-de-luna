@@ -21,7 +21,7 @@ export const fetchUserProfile = createAsyncThunk(
         );
       } catch (e) {}
       if (!token) return rejectWithValue({ message: "No token" });
-  const res = await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -100,8 +100,7 @@ const userSlice = createSlice({
         state.token = payload.token || state.token;
         state.profile = payload.data || state.profile;
         if (payload.data && payload.data.role) state.role = payload.data.role;
-         try {
-         
+        try {
         } catch (e) {}
       })
       .addCase(fetchUserProfile.rejected, (state, action) => {

@@ -95,7 +95,7 @@ const ProfilePage = () => {
       return;
     }
     try {
-  const res = await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -158,7 +158,7 @@ const ProfilePage = () => {
       if (!token) return;
 
       const serverFavIds = newFavorites.map((f) => f._id || f.itemId || f);
-  await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
+      await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -188,7 +188,7 @@ const ProfilePage = () => {
       const token = localStorage.getItem("token");
       if (!token) return;
 
-  await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
+      await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -215,7 +215,7 @@ const ProfilePage = () => {
       const token = localStorage.getItem("token");
       if (!token) return;
 
-  await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
+      await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -347,7 +347,7 @@ const ProfilePage = () => {
       const updatedPaymentMethods = { ...(user.paymentMethods || {}) };
       updatedPaymentMethods[editingMethod] = { ...paymentForm };
 
-  const res = await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -393,14 +393,17 @@ const ProfilePage = () => {
       return;
     }
     try {
-  const res = await fetch(`${process.env.REACT_APP_API_URL}/user/profile/password`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ password: newPassword }),
-      });
+      const res = await fetch(
+        `${process.env.REACT_APP_API_URL}/user/profile/password`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ password: newPassword }),
+        }
+      );
       if (res.ok) {
         toast.addToast("Password changed successfully.", { type: "info" });
         setNewPassword("");
@@ -416,14 +419,17 @@ const ProfilePage = () => {
   // handle manage addresses
   const handleManageAddresses = async () => {
     try {
-  const res = await fetch(`${process.env.REACT_APP_API_URL}/user/profile/address`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ address: addressForm }),
-      });
+      const res = await fetch(
+        `${process.env.REACT_APP_API_URL}/user/profile/address`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ address: addressForm }),
+        }
+      );
       if (res.ok) {
         toast.addToast("Address updated successfully.", { type: "info" });
         setAddressForm({});
@@ -449,7 +455,6 @@ const ProfilePage = () => {
           <span className="profile-title-highlight">
             {user.fullname ? `${user.fullname} ` : "User Profile"}
           </span>
-           
         </h1>
 
         {!token && process.env.NODE_ENV !== "development" ? (

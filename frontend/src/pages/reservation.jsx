@@ -37,7 +37,7 @@ const Reservation = () => {
         contactInfo: { email: form.contactEmail, phone: form.contactPhone },
       };
 
-  const res = await fetch(`${process.env.REACT_APP_API_URL}/booking`, {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/booking`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

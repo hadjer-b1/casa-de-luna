@@ -45,7 +45,7 @@ function Login() {
         const payload = idUser.includes("@")
           ? { email: idUser, password }
           : { username: idUser, password };
-  const res = await fetch(`${process.env.REACT_APP_API_URL}/user/login`, {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/user/login`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
@@ -60,9 +60,12 @@ function Login() {
             localStorage.setItem("tokenExpiry", String(expiry));
 
             try {
-              const prof = await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
-                headers: { Authorization: `Bearer ${token}` },
-              });
+              const prof = await fetch(
+                `${process.env.REACT_APP_API_URL}/user/profile`,
+                {
+                  headers: { Authorization: `Bearer ${token}` },
+                }
+              );
               if (prof.ok) {
                 const u = await prof.json();
                 localStorage.setItem("user", JSON.stringify(u));
@@ -211,7 +214,6 @@ function Login() {
     }
   };
 
-
   return (
     <div className="login-container">
       <div className="login">
@@ -267,7 +269,7 @@ function Login() {
             className="forgot-password-link"
             onClick={() => setShowEmailModal(true)}
             aria-haspopup="dialog"
-           >
+          >
             Forgot Password?
           </button>
           {message && <div className="auth-message">{message}</div>}

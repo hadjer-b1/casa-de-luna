@@ -73,10 +73,9 @@ const ChefPage = () => {
   // handle touch end to trigger page change if swipe detected
   const handleTouchEnd = () => {
     const dx = lastDxRef.current || 0;
-    const threshold = 50;  
+    const threshold = 50;
     if (!isSwipingRef.current) return;
     if (dx < -threshold) {
-      
       setCurrentPage((p) =>
         Math.min(
           p + 1,
@@ -87,9 +86,9 @@ const ChefPage = () => {
         )
       );
     } else if (dx > threshold) {
-       setCurrentPage((p) => Math.max(0, p - 1));
+      setCurrentPage((p) => Math.max(0, p - 1));
     }
-     isSwipingRef.current = false;
+    isSwipingRef.current = false;
     lastDxRef.current = 0;
   };
 
@@ -103,7 +102,7 @@ const ChefPage = () => {
 
   // Handle click on a chef card to flip it and show a random dish
   const handleChefClick = (index) => {
-     if (isSwipingRef.current) return;
+    if (isSwipingRef.current) return;
     setPickedDish((prev) => {
       const next = [...prev];
       if (!next[index] && menuItems && menuItems.length) {
@@ -150,7 +149,7 @@ const ChefPage = () => {
         >
           {chefs.length > 0 ? (
             visible.map((chef, relIdx) => {
-              const idx = start + relIdx; 
+              const idx = start + relIdx;
               return (
                 <div
                   className={`chef-card ${flipped[idx] ? "is-flipped" : ""}`}
@@ -214,7 +213,7 @@ const ChefPage = () => {
           )}
         </section>
 
-         {isSmallScreen && totalPages > 1 && (
+        {isSmallScreen && totalPages > 1 && (
           <div className="chef-pagination">
             <button
               className="chef-page-btn"

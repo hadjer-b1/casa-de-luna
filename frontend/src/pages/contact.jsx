@@ -20,7 +20,7 @@ const Contact = () => {
     setStatus("sending");
     setErrorMsg("");
     try {
-  const res = await fetch(`${process.env.REACT_APP_API_URL}/contact`, {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
