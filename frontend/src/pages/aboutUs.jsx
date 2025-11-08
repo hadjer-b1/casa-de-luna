@@ -8,7 +8,7 @@ import shapeOne from "../assets/image/shape-1.png";
 import shapeTwo from "../assets/image/shape-5.png";
 import shapeThree from "../assets/image/shape-3.png";
 import shapeFour from "../assets/image/shape-7.png";
-import shapeFive from "../assets/image/shape-3.png";
+import shapeFive from "../assets/image/shape-2.png";
 import TableImage from "../assets/image/fancy-table.png";
 import SustainableIcon from "../assets/Vectors/sustainable-green-svgrepo-com.svg";
 import CraftsmanshipIcon from "../assets/Vectors/craft.png";
