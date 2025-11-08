@@ -2,7 +2,8 @@
 
 ![Casa de Luna](casa%20de%20luna.png)
 
-Welcome to **Casa de Luna**, a lively and elegant platform that brings style and vibrancy to your digital experience. Immerse yourself in a world where every click feels magical and every interaction feels alive.
+Welcome to **Casa de Luna**, a vibrant and elegant restaurant where every meal is a celebration. From the cozy ambiance to the delightful dishes, immerse yourself in an experience full of flavor, style, and warmth. Whether you’re browsing our menu, making a reservation, or discovering our specials, every click brings you closer to the magic of Casa de Luna.  
+
 
 ---
 
