@@ -8,7 +8,7 @@ export default function VIPModal({ isOpen, onClose }) {
   const handleJoin = async (payload) => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/user/vip", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/user/vip`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

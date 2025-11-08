@@ -19,7 +19,7 @@ const ChefPage = () => {
 
   // Fetch chefs data from the backend
   useEffect(() => {
-    fetch("http://localhost:5000/chefs")
+    fetch(`${process.env.REACT_APP_API_URL}/chefs`)
       .then((response) => response.json())
       .then((data) => setChefs(data))
       .catch((error) => console.error("Error fetching chefs:", error));
@@ -95,7 +95,7 @@ const ChefPage = () => {
 
   // Fetch menu items data from the backend
   useEffect(() => {
-    fetch("http://localhost:5000/menu")
+    fetch(`${process.env.REACT_APP_API_URL}/menu`)
       .then((response) => response.json())
       .then((data) => setMenuItems(data))
       .catch((error) => console.error("Error fetching menu items:", error));

@@ -59,7 +59,7 @@ function Menu() {
   useEffect(() => {
     const fetchMenuDishes = async () => {
       try {
-        const response = await fetch("http://localhost:5000/menu");
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/menu`);
         const data = await response.json();
         console.log(
           "[FETCH] Menu dishes from backend:",
@@ -77,7 +77,7 @@ function Menu() {
   // adding a new dish to the menu 'backend and frontend'
   const handleAddDish = async (dish) => {
     try {
-      const response = await fetch("http://localhost:5000/menu", {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/menu`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -109,7 +109,7 @@ function Menu() {
         if (dish.url) {
           const formData = new FormData();
           formData.append("image", dish.url);
-          await fetch(`http://localhost:5000/menu/${addedDish._id}/upload`, {
+          await fetch(`${process.env.REACT_APP_API_URL}/menu/${addedDish._id}/upload`, {
             method: "POST",
             body: formData,
           });
@@ -127,7 +127,7 @@ function Menu() {
   const handleRemoveDish = async (dishToRemove) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/menu/${dishToRemove._id}`,
+        `${process.env.REACT_APP_API_URL}/menu/${dishToRemove._id}`,
         {
           method: "DELETE",
         }
@@ -146,7 +146,7 @@ function Menu() {
   // function to fetch menu dishes
   const fetchMenuDishes = async () => {
     try {
-      const response = await fetch("http://localhost:5000/menu");
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/menu`);
       const data = await response.json();
       const normalized = data.map((d) => ({ ...d, quantity: d.quantity || 0 }));
       setMenuDishes(normalized);
@@ -167,7 +167,7 @@ function Menu() {
       formData.append("image", dishToEdit.url);
 
       const response = await fetch(
-        `http://localhost:5000/menu/${dishToEdit._id}`,
+        `${process.env.REACT_APP_API_URL}/menu/${dishToEdit._id}`,
         {
           method: "PUT",
           body: formData,
@@ -297,7 +297,7 @@ function Menu() {
       const token = localStorage.getItem("token");
       if (!token) return;
 
-      await fetch("http://localhost:5000/user/profile", {
+  await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -335,7 +335,7 @@ function Menu() {
   // Update dish quantity on the server
   const updateDishQuantity = async (dishId, newQuantity) => {
     try {
-      const response = await fetch(`http://localhost:5000/menu/${dishId}`, {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/menu/${dishId}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -482,7 +482,7 @@ function Menu() {
           const token = localStorage.getItem("token");
           if (!token) return;
 
-          const res = await fetch("http://localhost:5000/user/profile", {
+          const res = await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",

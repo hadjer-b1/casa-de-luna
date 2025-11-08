@@ -95,7 +95,7 @@ const ProfilePage = () => {
       return;
     }
     try {
-      const res = await fetch("http://localhost:5000/user/profile", {
+  const res = await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -158,7 +158,7 @@ const ProfilePage = () => {
       if (!token) return;
 
       const serverFavIds = newFavorites.map((f) => f._id || f.itemId || f);
-      await fetch("http://localhost:5000/user/profile", {
+  await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -188,7 +188,7 @@ const ProfilePage = () => {
       const token = localStorage.getItem("token");
       if (!token) return;
 
-      await fetch("http://localhost:5000/user/profile", {
+  await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -215,7 +215,7 @@ const ProfilePage = () => {
       const token = localStorage.getItem("token");
       if (!token) return;
 
-      await fetch("http://localhost:5000/user/profile", {
+  await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -275,7 +275,6 @@ const ProfilePage = () => {
   const handleEdit = () => {
     if (!editMode) {
       setForm({
-        fullname: user.fullname || "",
         email: user.email || "",
         phone: user.phone || "",
         address: user.address || "",
@@ -348,7 +347,7 @@ const ProfilePage = () => {
       const updatedPaymentMethods = { ...(user.paymentMethods || {}) };
       updatedPaymentMethods[editingMethod] = { ...paymentForm };
 
-      const res = await fetch("http://localhost:5000/user/profile", {
+  const res = await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -394,7 +393,7 @@ const ProfilePage = () => {
       return;
     }
     try {
-      const res = await fetch("http://localhost:5000/user/profile/password", {
+  const res = await fetch(`${process.env.REACT_APP_API_URL}/user/profile/password`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -417,7 +416,7 @@ const ProfilePage = () => {
   // handle manage addresses
   const handleManageAddresses = async () => {
     try {
-      const res = await fetch("http://localhost:5000/user/profile/address", {
+  const res = await fetch(`${process.env.REACT_APP_API_URL}/user/profile/address`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

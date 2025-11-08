@@ -32,7 +32,7 @@ function Footer() {
 
       const token = localStorage.getItem("token");
       if (token) {
-        await fetch("http://localhost:5000/user/profile", {
+        await fetch(`${process.env.REACT_APP_API_URL}/user/profile`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -55,7 +55,7 @@ function Footer() {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/subscribe", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/subscribe`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

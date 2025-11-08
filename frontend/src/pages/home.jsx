@@ -34,7 +34,7 @@ const Home = () => {
 
   /* fetching the meals from the db*/
   useEffect(() => {
-    fetch("http://localhost:5000/menu")
+    fetch(`${process.env.REACT_APP_API_URL}/menu`)
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched data:", data);
@@ -45,7 +45,7 @@ const Home = () => {
 
   // Fetching chefs
   useEffect(() => {
-    fetch("http://localhost:5000/chefs")
+    fetch(`${process.env.REACT_APP_API_URL}/chefs`)
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched chefs:", data);
