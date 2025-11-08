@@ -18,6 +18,7 @@
     "@testing-library/user-event": "^13.5.0",
     "firebase": "^12.5.0",
     "lucide-react": "^0.525.0",
+    "payment": "^2.4.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^8.1.3",
