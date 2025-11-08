@@ -1,0 +1,88 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0px auto;
+
+  padding: 8rem;
+  background: linear-gradient(to bottom right, #0b0b0b, #1a1a1ab3);
+  color: white;
+}
+.contact h2 {
+  font-family: "Norican", cursive;
+  font-size: 3rem;
+  margin: 0rem auto;
+}
+.contact p {
+  font-family: serif;
+  font-size: 1.2rem;
+  margin: 1rem auto;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  background: #33333361;
+  padding: 2rem;
+  gap: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 600px;
+}
+.contact-input {
+  background: transparent;
+  font-family: serif;
+  font-size: 1rem;
+  color: white;
+  padding: 1rem;
+  transition: 250ms background ease-in;
+  width: calc(100% - 3rem);
+  margin: 0.5rem auto;
+  border-bottom: 1px solid #ffffff;
+}
+.contact-input:focus {
+  background: white;
+  color: black;
+  outline: 0 transparent solid;
+}
+.message {
+  min-height: 150px;
+  width: calc(100% - 3rem);
+  max-width: 100%;
+   
+}
+.contact-btn {
+  background: #c6bb46;
+  color: black;
+  font-family: serif;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  width: 250px;
+  margin: 1rem auto;
+  border: none;
+  cursor: pointer;
+  transition: background 250ms ease-in;
+}
+.contact-btn:hover {
+  background: #918631;
+}
+
+/*-------------------------Other modes-----------------------------------------*/
+@media (max-width: 768px) {
+  .contact {
+    padding: 4rem 1rem;
+    background: linear-gradient(to bottom right, #0b0b0b, #1a1a1ab3);
+  }
+  .contact h2 {
+    font-size: 2.5rem;
+
+  }
+  .contact-form {
+    padding: 1rem;
+    
+  }
+  .contact-btn {
+    width: 100%;
+  }
+}

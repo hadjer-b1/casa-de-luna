@@ -1,0 +1,352 @@
+:root {
+  --bg: #fff;
+  --container-bg: #fff;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --text: #2a2a2a;
+  --muted: #555;
+  --accent: #d4af37;
+  --surface: #faf9f7;
+  --strong: #3a3a3a;
+  --accent-light: #f4e5c2;
+}
+.help-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.help-container {
+  max-width: 1000px;
+  margin: 8rem auto;
+  padding: 3rem;
+  background: var(--container-bg);
+  box-shadow: 0 15px 50px var(--shadow);
+  border-radius: 16px;
+  font-family: "Cormorant Garamond", serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.help-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--accent-light),
+    var(--accent)
+  );
+}
+
+.help-section {
+  animation: fadeIn 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.help-section h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.help-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.help-section p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.help-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 2.5rem 0;
+}
+
+.help-section li {
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1rem;
+  background: var(--surface);
+  border-left: 3px solid var(--accent);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.help-section li::before {
+  content: "•";
+  color: var(--accent);
+  font-size: 2rem;
+  position: absolute;
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.help-section li:hover {
+  transform: translateX(5px);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.help-section li:hover::before {
+  opacity: 1;
+  left: 5px;
+}
+
+.help-section strong {
+  color: var(--strong);
+  font-weight: 600;
+  position: relative;
+}
+
+.help-section strong::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.help-section li:hover strong::after {
+  width: 100%;
+}
+
+.help-section em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 500;
+}
+/*--------------------------testimonials section----------------*/
+.testimonials-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+.testimonials-section h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+.testimonial-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.testimonial-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  justify-content: space-between;
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.testimonial-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.testimonial-item p {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.testimonial-item span {
+  font-weight: 600;
+  color: var(--strong);
+}
+.testimonial-content {
+  flex-grow: 1;
+  text-align: left;
+  gap: 0.5rem;
+}
+.testimonial-rating {
+  margin-top: 0.5rem;
+}
+.quote-icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.restaurant-section {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 1rem;
+}
+.restaurant-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.info-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 2rem;
+  font-size: 1.3rem;
+}
+
+.info-text-1 {
+  margin-bottom: 5rem;
+}
+.support-section-2 {
+  background-color: #3b2b1236;
+  padding: 2rem 4rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.help-section {
+  animation: fadeIn 0.6s ease-out, pulse 3s ease-in-out 0.6s infinite;
+}
+
+.help-section:hover {
+  animation-play-state: paused;
+}
+ul {
+  list-style-type: none;
+}
+.info-text {
+  color: #bfa34a;
+  font-weight: 600;
+}
+/*---------------------------key frames--------------------------------------*/
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*---------------------other modes----------------------------------------*/
+@media (max-width: 768px) {
+  .help-container {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+
+  .help-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .help-section p {
+    font-size: 1rem;
+  }
+
+  .help-section li {
+    padding: 1rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c0e10;
+    --container-bg: #0f1214;
+    --shadow: rgba(0, 0, 0, 0.6);
+    --text: #e8e8e8;
+    --muted: #cfcfcf;
+    --accent: #bfa34a;
+    --surface: #0b0d0f;
+    --strong: #ffffff;
+    --accent-light: #3b2b12;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  .help-container {
+    background: linear-gradient(
+        180deg rgba(255, 255, 255, 0.02),
+        rgba(0, 0, 0, 0)
+      ),
+      var(--container-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  }
+
+  .help-container::before {
+    background: linear-gradient(
+      90deg,
+      rgba(191, 163, 74, 0.95),
+      rgba(180, 153, 80, 0.12),
+      rgba(191, 163, 74, 0.95)
+    );
+    mix-blend-mode: screen;
+  }
+
+  .help-section h2 {
+    color: var(--text);
+  }
+
+  .help-section h2::after {
+    background: var(--accent);
+  }
+
+  .help-section p {
+    color: var(--muted);
+  }
+
+  .help-section li {
+    background: #0b0d0f;
+    border-left-color: var(--accent);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.02) inset;
+  }
+
+  .help-section li::before {
+    color: var(--accent);
+  }
+
+  .help-section strong {
+    color: var(--strong);
+  }
+
+  .help-section strong::after {
+    background: var(--accent);
+  }
+}

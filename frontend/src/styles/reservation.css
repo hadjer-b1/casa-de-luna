@@ -1,0 +1,276 @@
+.reservation-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background: linear-gradient(to right, #0e0d0a, #1f1d17);
+}
+
+.reservation-banner {
+  width: 100%;
+  padding: 2rem;
+  margin-top: 0;
+  background-image: url("../assets/image/food.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.reservation-title {
+  font-size: 4rem;
+  color: #f9f6ec;
+  margin-bottom: 7rem;
+  margin-top: 10rem;
+  font-family: "Norican", cursive;
+  text-align: center;
+  text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(1px);
+}
+
+.reservation-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.reservation-header-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(39, 36, 27, 0.85);
+  font-family: serif;
+  padding: 2rem;
+  padding-top: 0;
+  border-radius: 8px;
+  width: 250px;
+  height: 150px;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.6);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.reservation-header-item:hover {
+  background-color: #3e3a2a;
+}
+
+.reservation-header-item:hover h3 {
+  color: #e3d4a3;
+}
+
+.reservation-header-item:hover .reservation-icon-container {
+  background-color: #5b7742;
+  color: #f9f6ec;
+  animation: bounce 0.5s ease-in-out;
+}
+.reservation-icon-container {
+  width: 50px;
+  height: 60px;
+  padding: 0.5rem;
+  position: relative;
+  top: -1rem;
+  background-color: #908b6f;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reservation-icon {
+  width: 50px;
+  height: 50px;
+  color: #23310f;
+}
+
+.time-group {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  width: 100%;
+}
+.reservation-header-item h3 {
+  font-size: 1.5rem;
+  color: #f1e8cf;
+  margin: 0.5rem auto;
+  font-family: "Norican", cursive;
+}
+
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(23, 22, 18, 0.6);
+  backdrop-filter: blur(6px);
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  width: 700px;
+  max-width: 1000px;
+  font-family: serif;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  width: 100%;
+}
+.form-group input,
+.form-group-time input,
+#reservation-type {
+  width: 100%;
+}
+
+.form-group-time {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-right: 142px;
+}
+.reservation-form input,
+.reservation-form textarea,
+#reservation-type {
+  background: transparent;
+  font-family: serif;
+  transition: 250ms background ease-in;
+  width: calc(80% - 3rem);
+  padding: 0.8rem;
+  border: none;
+  border-bottom: 1px solid #7e7648;
+  font-size: 1rem;
+  box-shadow: 1px 5px 4px rgba(0, 0, 0, 0.461);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: #e9e6d3;
+}
+
+.reservation-form input:focus,
+.reservation-form textarea:focus {
+  background: rgb(255, 255, 255);
+  color: #000000;
+}
+
+#reservation-type:focus {
+  background: rgba(255, 255, 255, 0.256);
+  color: #1e1d17;
+}
+.reservation-form input:hover,
+.reservation-form textarea:hover,
+#reservation-type:hover {
+  padding: 0.8rem;
+  font-size: 1rem;
+}
+
+.reservation-form input:focus,
+.reservation-form textarea:focus,
+#reservation-type:focus {
+  outline: none;
+  border-color: #a89249;
+  box-shadow: 0 0 6px rgba(168, 146, 73, 0.3);
+}
+
+.reservation-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.reservation-form button {
+  font-family: serif;
+  font-weight: bold;
+  width: 50%;
+  background-color: #a89249;
+  color: #1e1d17;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 2rem auto;
+
+  transition: background-color 0.3s ease;
+}
+
+.reservation-form button:hover {
+  background-color: #8c7935;
+  color: #fff;
+}
+
+.reservation-info {
+  margin: 2rem auto;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #dfdac5;
+  font-family: serif;
+}
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+@media (max-width: 768px) {
+  .reservation-title {
+    font-size: 2.2rem;
+    margin-bottom: 4rem;
+    margin-top: 3rem;
+  }
+  .reservation-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: auto;
+    height: auto;
+    padding: auto;
+    gap: 1rem;
+  }
+  .reservation-header-item {
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+  }
+  .reservation-form {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .form-group {
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+  
+  .time-group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+ 
+  .form-group-time {
+    display: flex;
+    margin: 0;
+  }
+  .form-group input,
+  .form-group textarea,
+  #reservation-type {
+    width: 100%;
+  }
+  .reservation-header-item {
+    width: 100%;
+    height: auto;
+  }
+}

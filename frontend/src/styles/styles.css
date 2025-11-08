@@ -1,0 +1,82 @@
+ 
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a,
+img,
+data,
+span,
+button,
+input,
+select,
+textarea,
+ion-icon {
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  height: auto;
+}
+
+input,
+select,
+button,
+textarea {
+  background: none;
+  font: inherit;
+  border: none;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
+
+address {
+  font-style: normal;
+}
+
+/*---------------------------------------------------------------------
+                          GLOBAL STYLES
+-----------------------------------------------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+body,
+html {
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+  box-sizing: border-box;
+}
+@keyframes sliderReveal {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+}

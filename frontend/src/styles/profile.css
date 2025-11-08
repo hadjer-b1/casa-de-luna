@@ -1,0 +1,1050 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600;700&family=Dancing+Script:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lovers+Quarrel&family=Rouge+Script&display=swap");
+:root {
+  --golden-yellow-alpha-10: hsla(207, 100%, 50%, 0.048);
+  --muted: #cfd8dc;
+  --gold-100: #ffefcf;
+  --gold-200: #ffd07a;
+  --gold-300: #ffb347;
+  --accent: linear-gradient(90deg, var(--gold-200), var(--gold-300));
+  --glass-border: rgba(255, 180, 71, 0.08);
+}
+
+body .profile-container {
+  background: var(--golden-yellow-alpha-10);
+  color: white;
+  min-height: 100vh;
+  height: fit-content;
+  padding-top: 3rem;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+}
+
+.profile-main,
+.account-main {
+  max-width: 1100px;
+  margin: 4rem;
+  padding: 28px 20px;
+}
+
+.profile-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  font-family: "Playfair Display", "Dancing Script", serif;
+  font-weight: 700;
+  font-size: 2.6rem;
+  color: var(--gold-300);
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 18px rgba(255, 180, 71, 0.06);
+}
+.profile-title-highlight {
+  font-family: "Lovers Quarrel", cursive;
+  font-weight: 300;
+  color: var(--gold-100);
+  text-align: center;
+  font-size: 3.2rem;
+  margin-top: 0.6rem;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  align-items: start;
+}
+
+.profile-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+  padding: 22px;
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+}
+.profile-info h2,
+.profile-history h2,
+.profile-favorites h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--gold-300);
+  margin: 0 0 12px 0;
+  font-size: 1.5rem;
+}
+
+.profile-info p,
+.profile-history ul,
+.profile-favorites span {
+  color: #dfe7ea;
+  line-height: 1.6;
+}
+
+.profile-header {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 180, 71, 0.18);
+  box-shadow: 0 6px 22px rgba(3, 8, 20, 0.6),
+    inset 0 -6px 18px rgba(255, 180, 71, 0.03);
+}
+.profile-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  color: var(--gold-100);
+}
+.profile-meta {
+  color: #aebfc6;
+  font-size: 0.95rem;
+}
+
+.profile-info button,
+.profile-edit-form button,
+.profile-history button,
+.delete-fav-btn {
+  background: var(--accent);
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  margin: 0.3rem 0.5rem 0.3rem 0;
+  font-size: 0.98rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.profile-info button:hover,
+.profile-edit-form button:hover,
+.profile-history button:hover,
+.delete-fav-btn:hover {
+  transform: translateY(-3px);
+}
+.active-info,
+.active-fav,
+.active-history,
+.active-pay,
+.active-settings,
+.active-vip,
+.profile-notify {
+  color: var(--gold-200);
+}
+.edit-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.368);
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.edit-profile-btn,
+.cancel-edit-profile-btn {
+  background: var(--accent);
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.98rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.cancel-edit-profile-btn {
+  background: rgba(200, 0, 0, 0.9);
+
+  color: #fff;
+}
+.edit-profile-btn:hover {
+  background: var(--gold-300);
+}
+.cancel-edit-profile-btn:hover {
+  background: rgba(174, 0, 0, 0.8);
+}
+.profile-info-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 1rem;
+  align-items: flex-end;
+}
+.favorites-list {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.favorite-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.015),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 10px;
+  padding: 12px;
+  min-width: 120px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+.favorite-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+  border: 2px solid var(--gold-300);
+}
+
+.profile-info {
+  display: grid;
+  grid-template-columns: 200px auto;
+  align-items: start;
+  justify-items: start;
+  gap: 50px;
+  padding: 0 18px;
+}
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.profile-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 180, 71, 0.18);
+  box-shadow: 0 6px 22px rgba(3, 8, 20, 0.6),
+    inset 0 -6px 18px rgba(255, 180, 71, 0.03);
+}
+.profile-avatar.initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  color: var(--gold-100);
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+.profile-meta {
+  color: #aebfc6;
+  font-size: 0.95rem;
+  margin: 1rem 0 2rem;
+}
+.profile-meta h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  color: var(--gold-100);
+  font-weight: bold;
+}
+.profile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.profile-nav button {
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  padding: 0;
+  font-size: 0.98rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.profile-nav button:hover {
+  color: var(--gold-300);
+  transform: translateY(-3px);
+}
+.profile-nav button.active-info,
+.profile-nav button.active-fav,
+.profile-nav button.active-history,
+.profile-nav button.active-pay,
+.profile-nav button.active-settings,
+.profile-nav button.active-vip,
+.profile-nav button.profile-notify {
+  color: var(--gold-200);
+}
+.profile-info-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 1rem 0;
+  width: 100%;
+}
+.profile-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  width: 100%;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.4);
+}
+.profile-details h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--gold-300);
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--gold-300);
+  padding-bottom: 3rem;
+}
+.profile-details {
+  width: 100%;
+}
+.vip-symbol {
+  position: absolute;
+  top: 180px;
+  left: 60%;
+  transform: translateX(-50%);
+  width: 600px;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.profile-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  text-align: center;
+}
+.profile-cta p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/*---------------------------------------------- Payment Section------------------------------------*/
+.profile-billing {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  text-align: center;
+  height: fit-content;
+}
+.profile-billing button {
+  transform: none;
+  box-shadow: none;
+}
+.profile-billing p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+.profile-billing h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--gold-300);
+  margin: 0 0 12px 0;
+  font-size: 1.5rem;
+}
+.billing-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  margin-top: 12px;
+}
+.billing-method {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.billing-method span {
+  color: var(--muted);
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 1px 10px;
+  margin-top: 6px;
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.18s ease;
+}
+.billing-method .arrow-icon {
+  fill: var(--muted);
+  width: 16px;
+  height: 16px;
+  margin: 8px;
+}
+.billing-method span:hover {
+  color: var(--gold-200);
+}
+
+.payment-method-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+.payment-method-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.payment-card-visual {
+  width: 400px;
+  height: 140px;
+  background: linear-gradient(135deg, #0f1724, #16212b);
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.6);
+  margin: 8px 0;
+  font-family: Montserrat, system-ui, -apple-system, Helvetica, Arial;
+}
+.payment-card-chip {
+  width: 40px;
+  height: 28px;
+  background: linear-gradient(90deg, #e6c07b, #f5de9a);
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.payment-card-number {
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+.payment-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.payment-card-name {
+  font-size: 12px;
+  opacity: 0.9;
+}
+.payment-card-expiry {
+  font-size: 12px;
+  opacity: 0.9;
+}
+.payment-details {
+  display: flex;
+  gap: 12px;
+  padding: 1rem;
+  width: 100%;
+}
+.payment-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4px;
+  gap: 4px;
+  width: 100%;
+}
+.edit-payment-btn {
+  margin-top: 20px !important;
+  align-self: flex-end;
+  background: var(--gold-100);
+}
+.edit-payment-btn:hover {
+  background: var(--gold-300);
+  box-shadow: none;
+  transform: none;
+}
+.payment-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+  width: 100%;
+}
+.payment-edit-form input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.368);
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.payment-edit-form input::placeholder,
+.payment-edit-form input:focus {
+  color: #e0e0e0;
+}
+
+.payment-edit-form button {
+  width: fit-content;
+  align-self: flex-end;
+}
+.payment-edit-form button:hover {
+  background: var(--gold-300);
+  box-shadow: none;
+  transform: none;
+}
+.payment-edit-actions {
+  display: flex;
+  gap: 12px;
+}
+.payment-edit-actions .cancel-btn {
+  background: rgba(200, 0, 0, 0.9) !important;
+}
+.payment-edit-actions .cancel-btn:hover {
+  background: rgba(174, 0, 0, 0.8) !important;
+  box-shadow: none;
+  transform: none;
+}
+.payment-edit-save-btn {
+  background: var(--gold-100);
+}
+.payment-edit-save-btn:hover {
+  background: var(--gold-300);
+}
+.paypal-card {
+  background: linear-gradient(135deg, #003087, #009cde);
+}
+/* ------------------------------------History Section----------------------------------*/
+.profile-history {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  text-align: left;
+  height: fit-content;
+}
+.empty {
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+}
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.history-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--glass-border);
+}
+.history-item:last-child {
+  border-bottom: none;
+}
+.profile-history button {
+  transform: none;
+  box-shadow: none;
+  width: fit-content;
+  align-self: flex-end;
+}
+.profile-history button:hover {
+  background: var(--gold-300);
+  box-shadow: none;
+  transform: none;
+}
+/* ---------------------------------Favorites Section----------------------------------*/
+.profile-favorites {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  text-align: left;
+  height: fit-content;
+}
+.delete-fav-btn {
+  background: rgba(200, 0, 0, 0.9);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.delete-fav-btn:hover {
+  background: rgba(174, 0, 0, 0.8);
+}
+.favorite-card {
+  position: relative;
+}
+.favorite-card .delete-fav-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+}
+.profile-favorites h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--gold-300);
+  margin: 0 0 12px 0;
+  font-size: 1.5rem;
+}
+/*--------------------------------------------- VIP Section ----------------------------------*/
+.profile-vip {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  text-align: left;
+  height: fit-content;
+}
+.profile-vip h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--gold-300);
+  margin: 0 0 12px 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.profile-vip h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--gold-200);
+  margin: 0;
+  font-size: 1.2rem;
+  display: flex;
+  gap: 8px;
+}
+.profile-vip p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+}
+.join-membership-btn {
+  background: var(--accent);
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.98rem;
+  font-weight: 700;
+  width: fit-content;
+  align-self: flex-end;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.membership-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.join-membership-btn:hover {
+  background: var(--gold-300);
+}
+.benefit-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+/*---------------------------------------- Profile Settings----------------------------------*/
+.profile-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  text-align: left;
+  height: fit-content;
+}
+.profile-settings h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--gold-300);
+  margin: 0 0 12px 0;
+  font-size: 1.5rem;
+}
+.settings-nav-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.settings-input,
+.profile-settings select {
+  width: 300px;
+  padding: 8px 12px;
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.368);
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+  margin-bottom: 12px;
+}
+.profile-settings input::placeholder,
+.profile-settings input:focus,
+.profile-settings select:focus {
+  color: #e0e0e0;
+}
+.profile-settings button {
+  width: fit-content;
+  align-self: flex-end;
+}
+.profile-settings button:hover {
+  background: var(--gold-300);
+  box-shadow: none;
+  transform: none;
+}
+
+/* --------------------------------- VIP Modal Enhancements --------------------------------- */
+.vip-modal-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 18px 0 6px 0;
+}
+.vip-modal-illustration .avatar {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, var(--gold-200), var(--gold-300));
+  color: #111;
+  font-weight: 700;
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+}
+.vip-tier-chip {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 208, 122, 0.12),
+    rgba(255, 179, 71, 0.12)
+  );
+  color: var(--gold-300);
+  border: 1px solid rgba(255, 180, 71, 0.06);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.vip-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+/*--------------------------------------------- Notifications ----------------------------------*/
+.profile-notifications {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  text-align: left;
+  height: fit-content;
+}
+.notification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.notify-btn {
+  align-self: center;
+}
+
+/*-------------------------------Other Modes--------------------------------------------*/
+@media (max-width: 900px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+  .profile-main,
+  .account-main {
+    margin: 28px 18px;
+  }
+  .profile-title {
+    font-size: 2rem;
+  }
+  .profile-info {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 30px;
+  }
+  .profile-info-items {
+    grid-template-columns: 1fr;
+  }
+  .profile-info-item {
+    height: fit-content;
+  }
+  .favorite-card {
+    min-width: 100px;
+  }
+  .profile-title {
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 750px) {
+  .profile-main {
+    margin: 0 12px;
+    padding-top: 0;
+  }
+  .profile-title {
+    margin-top: 0;
+  }
+}
+@media (max-width: 600px) {
+  .payment-card-visual {
+    width: 100%;
+    height: 120px;
+  }
+  .profile-main {
+    margin: 0 8px;
+    padding: 0;
+  }
+  .profile-container {
+    padding-top: 1.5rem !important;
+  }
+  .profile-title {
+    font-size: 1.8rem;
+  }
+  .profile-title-highlight {
+    font-size: 2.4rem;
+  }
+
+  .profile-info-item {
+    height: fit-content;
+  }
+  .favorite-card {
+    min-width: 100px;
+  }
+  .vip-symbol {
+    width: 400px;
+    top: 150px;
+  }
+  .profile-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+  .profile-info .profile-name {
+    font-size: 1.2rem;
+  }
+  .profile-meta {
+    font-size: 0.5rem;
+    margin: 0.5rem 0 1rem;
+  }
+  .profile-nav {
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+  .profile-nav button {
+    font-size: 12px;
+  }
+  .profile-details h2 {
+    font-size: 1.2rem;
+    padding-bottom: 0;
+  }
+  .profile-details p {
+    font-size: 8px;
+  }
+  .profile-info-item {
+    gap: 0.5rem;
+    padding: 8px;
+  }
+  .profile-info-items {
+    gap: 1rem;
+  }
+  .profile-info-item strong {
+    font-size: 10px;
+  }
+  .profile-history,
+  .profile-favorites,
+  .profile-billing,
+  .profile-vip,
+  .profile-settings {
+    padding: 4px;
+    margin: 0;
+    gap: 0;
+  }
+
+  .payment-details {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    padding: 0.5rem;
+  }
+  .payment-method-img {
+    width: 29px;
+    height: 29px;
+    margin-bottom: 0;
+  }
+  .payment-card-visual {
+    height: 100px;
+    width: 150px;
+  }
+  .payment-card-chip {
+    width: 30px;
+    height: 20px;
+    margin-bottom: 8px;
+  }
+  .payment-card-number {
+    font-size: 7px;
+    margin-bottom: 10px;
+  }
+  .payment-card-name,
+  .payment-card-expiry {
+    font-size: 7px;
+  }
+  .profile-billing button {
+    padding: 0.4rem 0.8rem;
+    font-size: xx-small;
+  }
+  .arrow-icon {
+    width: 9px !important;
+    height: 9px !important;
+    margin: -3px !important;
+  }
+  .payment-method-label {
+    font-size: 0.4rem !important;
+    gap: 6px !important;
+  }
+  .history-item {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--glass-border);
+    font-size: 5px !important;
+  }
+  .profile-billing h2,
+  .profile-history h2,
+  .profile-favorites h2,
+  .profile-vip h2,
+  .profile-settings h2,
+  .profile-info h2 {
+    font-size: 0.7rem !important;
+    padding-bottom: 0;
+    margin: 0.5rem 0;
+  }
+  .delete-fav-btn,
+  .profile-history button {
+    padding: 0.2rem 0.4rem;
+    font-size: xx-small;
+  }
+  .profile-info strong {
+    font-size: 8px;
+  }
+  .benefit-item h3 {
+    font-size: 10px;
+    gap: 4px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .benefit-icon {
+    width: 16px;
+    height: 16px;
+  }
+  .join-membership-btn {
+    font-size: 6px !important;
+  }
+  .favorites-list {
+    gap: 8px;
+    font-size: 8px;
+  }
+  .notification-list li {
+    font-size: 8px;
+  }
+  .notification-date {
+    font-size: 6px;
+  }
+  .profile-notifications {
+    padding: 8px;
+    gap: 4px;
+    font-size: 8px;
+  }
+  .notify-btn {
+    padding: 0.2rem 0.4rem !important;
+    font-size: xx-small !important;
+  }
+  .profile-settings {
+    padding: 8px;
+    gap: 4px;
+  }
+  .settings-input,
+  .profile-settings select {
+    width: 150px;
+    padding: 4px 6px;
+    font-size: 8px;
+    margin-bottom: 6px;
+  }
+  .profile-settings button {
+    padding: 0.2rem 0.4rem !important;
+    font-size: xx-small !important;
+  }
+  .profile-settings h4 {
+    font-size: 10px !important;
+  }
+  .profile-notifications .notification-list,
+  .profile-favorites .favorites-list {
+    overflow-y: scroll;
+    height: 300px;
+  }
+  .vip-symbol {
+    width: 300px;
+    top: 120px;
+  }
+  .profile-details {
+    margin-top: 6rem;
+  }
+  .profile-info {
+    gap: 20px;
+    padding: 0 10px;
+  }
+  .profile-info-items {
+    gap: 0.2rem;
+  }
+  .profile-info-item {
+    padding: 3px 10px;
+    gap: 0px;
+  }
+  .edit-profile-btn {
+    font-size: xx-small !important;
+    padding: 0.3rem 0.6rem !important;
+    margin-left: 5rem !important;
+  }
+  .membership-benefits {
+    gap: 10px;
+    font-family: "Courier New", Courier, monospace;
+  }
+  .membership-benefits p {
+    font-size: 8px !important;
+    font-family: "Times New Roman", Times, serif;
+  }
+  .join-membership-btn {
+    padding: 0.3rem 0.6rem !important;
+  }
+}
