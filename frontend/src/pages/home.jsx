@@ -23,6 +23,7 @@ import { useDispatch } from "react-redux";
 import { sendToBasket } from "../redux/Slices/SendToBasket";
 import { useToast } from "../components/Toast";
 import separator from "../assets/image/separator.svg";
+import fancyTableImg from "../assets/image/fancy-table.png";
 import "../styles/home.css";
 
 const Home = () => {
@@ -92,7 +93,7 @@ const Home = () => {
         </div>{" "}
         <Link to="/reservation" className="booking-btn has-after">
           <img
-            src={require("../assets/image/fancy-table.png")}
+            src={fancyTableImg}
             alt="Dark Restaurant"
             className="fancy-table"
           />
