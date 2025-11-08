@@ -5,8 +5,8 @@
   # Build command to run
   command = "npm run build"
   
-  # Directory containing the production build output
-  publish = "frontend/build"
+  # Directory containing the production build output (relative to base)
+  publish = "build"
   
   # Base directory for the build
   base = "frontend"
