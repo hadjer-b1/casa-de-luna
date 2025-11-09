@@ -11,7 +11,7 @@ const cors = require("cors");
 const PORT = process.env.PORT;
 
 app.use(cors({
-  origin: "https://casadeluna.netlify.app"
+  origin: "https://casa-de-luna.pages.dev"
 }));
 app.use(express.json());
 
