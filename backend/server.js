@@ -11,7 +11,10 @@ const cors = require("cors");
 const PORT = process.env.PORT;
 
 app.use(cors({
-  origin: "https://casa-de-luna.pages.dev"
+  origin: ["https://casa-de-luna.pages.dev", "http://localhost:3000"],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
 
